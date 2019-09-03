@@ -1,4 +1,4 @@
-.ColorBox {
+/*.ColorBox {
     width: 20%;
     height: 25%;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     cursor: pointer;
     margin-bottom: -3.5px;
 }
-
+*/
 .SingleColorPalette .ColorBox {
     height: 50%;
 }
@@ -46,7 +46,7 @@
     transition: 0.5s;
 }
 
-.box-content {
+/*.box-content {
     position: absolute;
     width: 100%;
     left: 0px;
@@ -137,3 +137,5 @@
     font-size: 2rem;
     font-weight: 100;
 }
+
+*/
