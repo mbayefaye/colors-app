@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -73,6 +73,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function NewPaleteForm() {
+  const [currentColor, setColor] = React.useState("teal");
+  const [colors, setColors] = React.useState(["purple", "#e15764"]);
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -84,7 +86,13 @@ export default function NewPaleteForm() {
   function handleDrawerClose() {
     setOpen(false);
   }
+  function addNewColor() {
+    setColors([...colors, currentColor]);
+  }
 
+  function updateCurrentColor(newColor) {
+    setColor(newColor.hex);
+  }
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -138,10 +146,15 @@ export default function NewPaleteForm() {
           </Button>
         </div>
         <ChromePicker
-          color="purple"
-          onChangeComplete={newColor => console.log(newColor)}
+          color={currentColor}
+          onChangeComplete={updateCurrentColor}
         />
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ backgroundColor: currentColor }}
+          onClick={addNewColor}
+        >
           Add Color
         </Button>
       </Drawer>
@@ -151,6 +164,11 @@ export default function NewPaleteForm() {
         })}
       >
         <div className={classes.drawerHeader} />
+        <ul>
+          {colors.map(color => (
+            <li style={{ backgroundColor: color }}>{color}</li>
+          ))}
+        </ul>
       </main>
     </div>
   );
