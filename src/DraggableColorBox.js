@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/styles";
 const styles = {
   root: {
     width: "20%",
-    height: "100%",
+    height: "200%",
     margin: "0 auto",
     display: "inline-block",
     position: "relative",
@@ -12,9 +12,11 @@ const styles = {
     marginBottom: "-3.5px"
   }
 };
-const DraggableColorBox = ({ color, classes }) => {
+const DraggableColorBox = ({ color, classes, name }) => {
   return (
-    <div className={classes.root} style={{ backgroundColor: color }}></div>
+    <div className={classes.root} style={{ backgroundColor: color }}>
+      {name}
+    </div>
   );
 };
 
