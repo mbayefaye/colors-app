@@ -15,6 +15,9 @@ A high level application called Colors
 ## Build status
 
 ## Screenshots
+<div align="center">
+    <img src="./assets/app.png" width="400px"/> 
+</div>
 
 ## Tech/framework used
 
