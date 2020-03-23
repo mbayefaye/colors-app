@@ -15,10 +15,7 @@ A high level application called Colors
 ## Build status
 
 ## Screenshots
-<div align="center">
-    <img src="./assets/app.png" width="400px"/> 
-</div>
-
+![Alt text](/Users/mbayefaye/Desktop/colors-app/src/assets/app.png?raw=true "app design")
 ## Tech/framework used
 
 <b>Built with</b>
